@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xyz.zisarknar.keyboardlisu.keyboard.LisuKeyboardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginTop="20dp"
+    android:background="@color/keyboard_background"
+    android:keyBackground="@drawable/key_background"
+    android:keyPreviewLayout="@null"
+    android:keyPreviewOffset="5dp"
+    android:keyTextColor="@color/text"
+    android:paddingTop="0dp"
+    android:popupLayout="@layout/preview"
+    android:shadowColor="@android:color/transparent"
+    android:shadowRadius="0.0">
+
+</xyz.zisarknar.keyboardlisu.keyboard.LisuKeyboardView>

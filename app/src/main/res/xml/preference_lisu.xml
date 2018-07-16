@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="@string/keyEnable"
+        android:summary="Search Lisu Keyboard and enable it"
+        android:title="Enable Keyboard" />
+
+    <Preference
+        android:key="@string/keySelect"
+        android:summary="Select Keyboard Lisu"
+        android:title="Select Keyboard" />
+
+    <PreferenceCategory android:title="Keyboard Customization">
+        <CheckBoxPreference
+            android:key="@string/pref_vib"
+            android:summary="Allow vibration on Key Press"
+            android:title="Vibration on Key Press" />
+        <CheckBoxPreference
+            android:key="@string/pref_snd"
+            android:summary="Allow Tap Sound on Key Press"
+            android:title="Sound on Key Press" />
+    </PreferenceCategory>
+
+    <EditTextPreference
+        android:dialogTitle="Enter a text"
+        android:key="text"
+        android:summary="Click to show a text entry dialog to test keyboard"
+        android:title="Keyboard Test" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="@string/defaultLisu"
+        android:summary="Switch on to make Lisu keyboard as default keyboard"
+        android:title="Default Keyboard" />
+
+</PreferenceScreen>

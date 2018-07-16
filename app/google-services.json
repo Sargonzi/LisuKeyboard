@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "794524298137",
+    "firebase_url": "https://keyboard-lisu.firebaseio.com",
+    "project_id": "keyboard-lisu",
+    "storage_bucket": "keyboard-lisu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794524298137:android:6f172eb6877100a4",
+        "android_client_info": {
+          "package_name": "xyz.zisarknar.keyboardlisu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794524298137-t311k38flashau8t86bi21uh99ihgb16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaZlY63Sksda2r4dj2X1eSrVPaUSgkoHw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

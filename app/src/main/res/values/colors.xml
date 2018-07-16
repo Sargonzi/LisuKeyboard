@@ -3,4 +3,9 @@
     <color name="colorPrimary">#263238</color>
     <color name="colorPrimaryDark">#263238</color>
     <color name="colorAccent">#FF4081</color>
+    <!--app specific-->
+    <color name="black">#000000</color>
+    <color name="text">#ffffff</color>
+    <color name="key_background">#546e7a</color>
+    <color name="keyboard_background">#263238</color>
 </resources>

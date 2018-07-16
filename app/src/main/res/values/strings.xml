@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Keyboard Lisu</string>
     <string name="action_settings">Settings</string>
+
+    <string name="pref_vib">vib</string>
+    <string name="pref_snd">snd</string>
+    <string name="keyEnable">enable</string>
+    <string name="keySelect">select</string>
+    <string name="defaultLisu">defaultLisu</string>
 </resources>
