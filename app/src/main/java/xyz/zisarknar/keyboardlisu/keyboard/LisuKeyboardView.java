@@ -30,10 +30,6 @@ public class LisuKeyboardView extends KeyboardView {
         super(context, attrs, defStyleAttr);
     }
 
-    public LisuKeyboardView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
     @Override
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);

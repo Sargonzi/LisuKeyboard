@@ -9,7 +9,7 @@
         android:id="@android:id/keyboardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#a5a7aa"
+        android:background="@color/keyboard_background"
         android:keyBackground="@drawable/key_background"
         android:keyPreviewLayout="@null"
         android:keyTextColor="#fff"

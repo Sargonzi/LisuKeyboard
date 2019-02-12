@@ -17,5 +17,4 @@ class LKApp : Application() {
         FontOverride.setDefaultFont(applicationContext, "MONOSPACE", "fonts/Lisu.ttf")
     }
 
-
 }

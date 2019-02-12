@@ -15,13 +15,6 @@ class MainActivity : BaseActivity() {
                 .replace(R.id.frameLayout, PrefFragment()).commit()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
 }
 
 

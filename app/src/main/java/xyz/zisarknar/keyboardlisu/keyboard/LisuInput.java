@@ -5,11 +5,20 @@ import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.media.AudioManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import xyz.zisarknar.keyboardlisu.R;
 
@@ -43,6 +52,8 @@ public class LisuInput extends InputMethodService implements KeyboardView.OnKeyb
     private int mLastDisplayWidth;
     private boolean caps = false;
     private int recentKeyboard = 0;
+    private Timer timerLongPress = null;
+    private boolean isLongPress = false;
 
 
     /**
@@ -52,6 +63,7 @@ public class LisuInput extends InputMethodService implements KeyboardView.OnKeyb
     @Override
     public void onCreate() {
         super.onCreate();
+        timerLongPress = new Timer();
     }
 
     /**
@@ -83,7 +95,7 @@ public class LisuInput extends InputMethodService implements KeyboardView.OnKeyb
     public View onCreateInputView() {
         mInputView = (LisuKeyboardView) getLayoutInflater().inflate(R.layout.keyboard_view_lisu, null);
         mInputView.setOnKeyboardActionListener(this);
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.defaultLisu), false)){
+        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.defaultLisu), false)) {
             mInputView.setKeyboard(mStandardLisuKeyboard);
         } else {
             mInputView.setKeyboard(mStandardKeyboard);
@@ -92,7 +104,7 @@ public class LisuInput extends InputMethodService implements KeyboardView.OnKeyb
     }
 
     @Override
-    public void onPress(int keyCode) {
+    public void onPress(final int keyCode) {
         //check if the snd check box is ON
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.pref_snd), false)) {
             playClick(keyCode);
@@ -102,11 +114,45 @@ public class LisuInput extends InputMethodService implements KeyboardView.OnKeyb
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.pref_vib), false)) {
             vibrate();
         }
+        timerLongPress.cancel();
+        timerLongPress = new Timer();
+        timerLongPress.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    Handler uiHandler = new Handler(Looper.getMainLooper());
+                    Runnable runnable = new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                LisuInput.this.onKeyLongPress(keyCode);
+                            } catch (Exception e) {
+                                Log.e(TAG, "uiHandler.run: " + e.getMessage());
+                            }
+                        }
+                    };
+                    uiHandler.post(runnable);
+                } catch (Exception e) {
+                    Log.e(TAG, "Timer.run: " + e.getMessage(), e);
+                }
+            }
+        }, ViewConfiguration.getLongPressTimeout());
 
+    }
+
+    /*
+        long key press and show popup but don't change the keyboard view
+     */
+    private void onKeyLongPress(int primaryCode) {
+        if (primaryCode == -101) {
+            isLongPress = true;
+            changeKeyboard();
+        }
     }
 
     @Override
     public void onRelease(int i) {
+        timerLongPress.cancel();
     }
 
     @Override
@@ -234,12 +280,24 @@ public class LisuInput extends InputMethodService implements KeyboardView.OnKeyb
 
     @Override
     public void swipeDown() {
-        requestHideSelf(1);
+        requestHideSelf(0);
 
     }
 
     @Override
     public void swipeUp() {
 
+    }
+
+    /**
+     * to make easy switching the keyboard when typing
+     */
+    private void changeKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (inputMethodManager != null) {
+            inputMethodManager.showInputMethodPicker();
+        } else {
+            Toast.makeText(getApplicationContext(), "Not possible", Toast.LENGTH_SHORT).show();
+        }
     }
 }
