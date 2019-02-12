@@ -138,19 +138,19 @@ class LisuInput : InputMethodService(), KeyboardView.OnKeyboardActionListener {
 
         when (primaryCode) {
             // change character view to symbol view and vice versa
-            LisuKeyboard.KEYCODE_MODE_CHANGE -> if (mCurrentKeyboard === mStandardKeyboard) {
-                recentKeyboard = 0
-                mInputView!!.keyboard = mStandardSymbol
-            } else if (mCurrentKeyboard === mStandardLisuKeyboard || mCurrentKeyboard === mShiftedLisuKeyboard) {
-                recentKeyboard = 1
-                mInputView!!.keyboard = mStandardSymbol
-            } else {
-                if (recentKeyboard == 0) {
-                    mInputView!!.keyboard = mStandardKeyboard
-                } else if (recentKeyboard == 1) {
-                    mInputView!!.keyboard = mStandardLisuKeyboard
-                }
-            }
+//            LisuKeyboard.KEYCODE_MODE_CHANGE -> if (mCurrentKeyboard === mStandardKeyboard) {
+//                recentKeyboard = 0
+//                mInputView!!.keyboard = mStandardSymbol
+//            } else if (mCurrentKeyboard === mStandardLisuKeyboard || mCurrentKeyboard === mShiftedLisuKeyboard) {
+//                recentKeyboard = 1
+//                mInputView!!.keyboard = mStandardSymbol
+//            } else {
+//                if (recentKeyboard == 0) {
+//                    mInputView!!.keyboard = mStandardKeyboard
+//                } else if (recentKeyboard == 1) {
+//                    mInputView!!.keyboard = mStandardLisuKeyboard
+//                }
+//            }
 
             // change english between lisu keyboard view
             KEYCODE_LANG_CHANGE -> if (mCurrentKeyboard === mStandardKeyboard) {
@@ -162,28 +162,28 @@ class LisuInput : InputMethodService(), KeyboardView.OnKeyboardActionListener {
                 mInputView!!.invalidateAllKeys()
             }
 
-            LisuKeyboard.KEYCODE_DELETE -> {
-                val selectedText = ic.getSelectedText(0)
-                if (TextUtils.isEmpty(selectedText)) {
-                    ic.deleteSurroundingText(1, 0)
-                } else {
-                    ic.commitText("", 1)
-                }
-            }
+//            LisuKeyboard.KEYCODE_DELETE -> {
+//                val selectedText = ic.getSelectedText(0)
+//                if (TextUtils.isEmpty(selectedText)) {
+//                    ic.deleteSurroundingText(1, 0)
+//                } else {
+//                    ic.commitText("", 1)
+//                }
+//            }
 
             //for english keyboard
             //and symbol
-            LisuKeyboard.KEYCODE_SHIFT -> if (mCurrentKeyboard === mStandardKeyboard) {
-                caps = !caps
-                mCurrentKeyboard!!.isShifted = caps
-                mInputView!!.invalidateAllKeys()
-            } else {
-                if (mCurrentKeyboard === mStandardSymbol) {
-                    mInputView!!.keyboard = mShiftedSymbol
-                } else if (mCurrentKeyboard === mShiftedSymbol) {
-                    mInputView!!.keyboard = mStandardSymbol
-                }
-            }
+//            LisuKeyboard.KEYCODE_SHIFT -> if (mCurrentKeyboard === mStandardKeyboard) {
+//                caps = !caps
+//                mCurrentKeyboard!!.isShifted = caps
+//                mInputView!!.invalidateAllKeys()
+//            } else {
+//                if (mCurrentKeyboard === mStandardSymbol) {
+//                    mInputView!!.keyboard = mShiftedSymbol
+//                } else if (mCurrentKeyboard === mShiftedSymbol) {
+//                    mInputView!!.keyboard = mStandardSymbol
+//                }
+//            }
 
             // for lisu key shift
             KEYCODE_LISU_SHIFT -> if (mCurrentKeyboard === mStandardLisuKeyboard) {
