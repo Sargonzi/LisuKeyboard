@@ -12,7 +12,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "xyz.zisarknar.keyboardlisu"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode versionMajor * 10000 + versionMinor * 1000 * versionPatch * 100
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"

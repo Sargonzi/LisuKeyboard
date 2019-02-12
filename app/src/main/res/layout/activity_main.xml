@@ -44,10 +44,12 @@
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
+                    android:id="@+id/cvEnable"
                     android:layout_width="140dp"
                     android:layout_height="190dp"
+                    android:layout_margin="10dp"
                     android:focusable="true"
-                    android:layout_margin="10dp">
+                    android:foreground="?android:attr/selectableItemBackground">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -87,10 +89,12 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
+                    android:id="@+id/cvSelect"
                     android:layout_width="140dp"
                     android:layout_height="190dp"
+                    android:layout_margin="10dp"
                     android:focusable="true"
-                    android:layout_margin="10dp">
+                    android:foreground="?android:attr/selectableItemBackground">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -138,10 +142,12 @@
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
+                    android:id="@+id/cvSetting"
                     android:layout_width="140dp"
                     android:layout_height="190dp"
+                    android:layout_margin="10dp"
                     android:focusable="true"
-                    android:layout_margin="10dp">
+                    android:foreground="?android:attr/selectableItemBackground">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -174,17 +180,19 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:gravity="center"
-                            android:text="Some description of the content." />
+                            android:text="Setting of Lisu Keyboard" />
 
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
+                    android:id="@+id/cvAbout"
                     android:layout_width="140dp"
                     android:layout_height="190dp"
+                    android:layout_margin="10dp"
                     android:focusable="true"
-                    android:layout_margin="10dp">
+                    android:foreground="?android:attr/selectableItemBackground">
 
                     <LinearLayout
                         android:layout_width="match_parent"
