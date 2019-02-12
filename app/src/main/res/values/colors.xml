@@ -3,9 +3,16 @@
     <color name="colorPrimary">#263238</color>
     <color name="colorPrimaryDark">#263238</color>
     <color name="colorAccent">#FF4081</color>
+
     <!--app specific-->
     <color name="black">#000000</color>
     <color name="text">#ffffff</color>
     <color name="key_background">#546e7a</color>
     <color name="keyboard_background">#263238</color>
+
+    <color name="light_grey">#DFDEDE</color>
+    <color name="purple">#512da8</color>
+    <color name="yellow">#fdd835</color>
+    <color name="green">#00796b</color>
+    <color name="red">#d81b60</color>
 </resources>

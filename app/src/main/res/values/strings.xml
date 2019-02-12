@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Keyboard Lisu</string>
+    <string name="app_name">Lisu Keyboard</string>
     <string name="action_settings">Settings</string>
 
     <string name="pref_vib">vib</string>
@@ -7,4 +7,9 @@
     <string name="keyEnable">enable</string>
     <string name="keySelect">select</string>
     <string name="defaultLisu">defaultLisu</string>
+
+
+    <string name="action_rate">Rate app</string>
+    <string name="action_share">Share</string>
 </resources>
+

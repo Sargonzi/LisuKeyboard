@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference
-        android:key="@string/keyEnable"
-        android:summary="Search Lisu Keyboard and enable it"
-        android:title="Enable Keyboard" />
-
-    <Preference
-        android:key="@string/keySelect"
-        android:summary="Select Keyboard Lisu"
-        android:title="Select Keyboard" />
-
     <PreferenceCategory android:title="Keyboard Customization">
         <CheckBoxPreference
             android:key="@string/pref_vib"
